@@ -1,0 +1,25 @@
+<!--
+Created Date: Monday March 9th 2020
+Author: zakaria EL MESSOUDI
+-----
+Last Modified: Monday March 9th 2020 11:27:56 am
+Modified By: zakaria EL MESSOUDI
+HISTORY:
+-->
+
+<form [formGroup]="form">
+  <input type="text" placeholder="name" formControlName="name" /> <br />
+  <label *ngIf="form.controls.name?.errors?.required && form.controls.name.touched"
+    >name is required</label
+  ><br />
+  <input type="text" placeholder="email" formControlName="email" /> <br />
+  <label
+    *ngIf="form.controls.email?.errors?.required &&  form.controls.email.touched"
+    >email is required</label
+  ><br />
+  <label
+  *ngIf="form.controls.email?.errors?.email &&  form.controls.email.touched"
+  >is this an email</label
+><br />
+  <button [disabled]="!form.valid" (click)="createClient()">Create</button>
+</form>

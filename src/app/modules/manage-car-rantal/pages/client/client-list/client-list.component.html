@@ -1,0 +1,19 @@
+<!--
+Created Date: Monday March 9th 2020
+Author: zakaria EL MESSOUDI
+-----
+Last Modified: Monday March 9th 2020 8:55:03 am
+Modified By: zakaria EL MESSOUDI
+HISTORY:
+-->
+
+<div>
+  <h3>Client List</h3>
+  <ul>
+    <li *ngFor="let client of clients, let index = index;">
+      {{ client.name }} {{client.email}} 
+      <br>
+      <button (click)="removeClient(index)">Delete</button>
+    </li>
+  </ul>
+</div>
