@@ -9,4 +9,5 @@
 
 export const ManageCarRantalRoutesNames = {
   ROOT: '',
+  CARS: 'car',
 };

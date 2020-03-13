@@ -8,8 +8,10 @@
  */
 import { ClientListPageComponent } from './client/client-list/client-list.component';
 import { ClientFormPageComponent } from './client/client-form/client-form.component';
+import { CarListPageComponent } from './car/car-list/car-list.component';
 
 export const ManageCarRantalPages: any[] = [
   ClientListPageComponent,
   ClientFormPageComponent,
+  CarListPageComponent,
 ];

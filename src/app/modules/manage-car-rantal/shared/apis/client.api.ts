@@ -8,17 +8,18 @@
  */
 import { Injectable } from '@angular/core';
 import { Client } from '../interfaces';
+import { of } from 'rxjs';
 @Injectable()
 export class ClientApi {
   private clients: Client[] = [];
   constructor() {}
 
   create(client: Client) {
-    this.clients.push(client);
-    return this.clients;
+    this.clients = [...this.clients, client];
+    return of(this.clients);
   }
-  remove(index: number) {
-    this.clients.splice(index, 1);
-    return this.clients;
+  remove(client: Client) {
+    this.clients = this.clients.filter(el => el.id !== client.id);
+    return of(this.clients);
   }
 }

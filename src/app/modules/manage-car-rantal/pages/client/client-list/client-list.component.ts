@@ -17,7 +17,7 @@ export class ClientListPageComponent {
   @Input() clients: Client[];
 
   @Output() remove = new EventEmitter();
-  removeClient(index: number) {
-    this.remove.emit(index);
+  removeClient(client: Client) {
+    this.remove.emit(client);
   }
 }

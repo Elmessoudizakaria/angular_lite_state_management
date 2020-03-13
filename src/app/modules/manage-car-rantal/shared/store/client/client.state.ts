@@ -9,4 +9,5 @@
 import { Client } from '../../interfaces';
 export class ClientState {
   clients: Client[] = [];
+  currentId = 0;
 }

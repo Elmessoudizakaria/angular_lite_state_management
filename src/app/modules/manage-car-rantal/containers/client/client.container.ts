@@ -6,22 +6,26 @@
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-import { Component   , OnInit } from '@angular/core'          ;
-import { Client               } from '../../shared/interfaces';
-import { ClientFacade         } from './client.facade'        ;
+import { Component   , OnDestroy, OnInit } from '@angular/core'          ;
+import { Client                          } from '../../shared/interfaces';
+import { ClientFacade                    } from './client.facade'        ;
 @Component({
   templateUrl: './client.container.html',
   styleUrls: ['./client.container.scss'],
 })
-export class ClientContainerComponent implements OnInit {
+export class ClientContainerComponent implements OnInit, OnDestroy {
   constructor(public clientFacade: ClientFacade) {}
 
   ngOnInit(): void {}
 
+  ngOnDestroy(): void {
+    this.clientFacade.onNgDetroy();
+  }
+
   create(client: Client) {
     this.clientFacade.create(client);
   }
-  removeClient(index: number) {
-    this.clientFacade.remove(index);
+  removeClient(client: Client) {
+    this.clientFacade.remove(client);
   }
 }

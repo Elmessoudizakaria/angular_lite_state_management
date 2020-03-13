@@ -11,9 +11,9 @@ HISTORY:
   <h3>Client List</h3>
   <ul>
     <li *ngFor="let client of clients, let index = index;">
-      {{ client.name }} {{client.email}} 
+      id: {{ client?.id }} name: {{ client.name }} email: {{client.email}} 
       <br>
-      <button (click)="removeClient(index)">Delete</button>
+      <button (click)="removeClient(client)">Delete</button>
     </li>
   </ul>
 </div>

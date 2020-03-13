@@ -7,3 +7,4 @@
  * HISTORY:
  */
 export * from './client.api';
+export * from './car.api';

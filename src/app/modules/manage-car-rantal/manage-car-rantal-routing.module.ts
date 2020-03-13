@@ -11,11 +11,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClientContainerComponent } from './containers/client/client.container';
 import { ManageCarRantalRoutesNames } from './manage-car-rantal.routes.names';
+import { CarContainerComponent } from './containers/car/car.container';
 
 const routes: Routes = [
   {
     path: ManageCarRantalRoutesNames.ROOT,
     component: ClientContainerComponent,
+  },
+  {
+    path: ManageCarRantalRoutesNames.CARS,
+    component: CarContainerComponent,
   },
 ];
 

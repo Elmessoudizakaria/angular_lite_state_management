@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+li{
+    margin: 10px;
+}
+li>a{
+    text-decoration-line: none;
+    text-transform: uppercase;
+    color: rgb(7, 53, 80);
+}

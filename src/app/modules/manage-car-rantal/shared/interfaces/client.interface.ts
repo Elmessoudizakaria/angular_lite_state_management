@@ -7,6 +7,7 @@
  * HISTORY:
  */
 export interface Client {
-  name : string;
+  id?: number;
+  name: string;
   email: string;
 }
