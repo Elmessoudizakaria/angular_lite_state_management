@@ -6,26 +6,29 @@
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-import { Component   , OnDestroy, OnInit } from '@angular/core'          ;
-import { Client                          } from '../../shared/interfaces';
-import { ClientFacade                    } from './client.facade'        ;
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Client } from '../../shared/interfaces';
+import { ClientStore } from './client.store';
 @Component({
   templateUrl: './client.container.html',
   styleUrls: ['./client.container.scss'],
 })
 export class ClientContainerComponent implements OnInit, OnDestroy {
-  constructor(public clientFacade: ClientFacade) {}
+  constructor(public clientStore: ClientStore) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.clientStore.getCars$();
+  }
 
   ngOnDestroy(): void {
-    this.clientFacade.onNgDetroy();
+    // this.clientStore.onNgDetroy();
   }
 
-  create(client: Client) {
-    this.clientFacade.create(client);
+  create(client: { name: string; email: string; car: string }) {
+    this.clientStore.updateCardDispo(parseInt(client.car, 10));
+    this.clientStore.addClient$({ name: client.name, email: client.email });
   }
   removeClient(client: Client) {
-    this.clientFacade.remove(client);
+    this.clientStore.removeClient$(client);
   }
 }

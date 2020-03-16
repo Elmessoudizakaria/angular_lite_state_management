@@ -7,7 +7,6 @@
  * HISTORY:
  */
 import { ClientContainerComponent } from './client/client.container';
-import { ClientFacade } from './client/client.facade';
 import { CarContainerComponent } from './car/car.container';
 import { CarFacade } from './car/car.facade';
 
@@ -15,4 +14,4 @@ export const ManageCarRantalContainers: any[] = [
   ClientContainerComponent,
   CarContainerComponent,
 ];
-export const ManageCarRantalFacades: any[] = [ClientFacade, CarFacade];
+export const ManageCarRantalFacades: any[] = [CarFacade];

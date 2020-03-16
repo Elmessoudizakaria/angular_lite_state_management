@@ -9,14 +9,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  ManageCarRantalContainers,
-  ManageCarRantalFacades,
-} from './containers';
+import { ManageCarRantalContainers, ManageCarRantalFacades } from './containers';
+import { ClientStore } from './containers/client/client.store';
 import { ManageCarRantalRoutingModule } from './manage-car-rantal-routing.module';
 import { ManageCarRantalPages } from './pages';
-import { ClientApi } from './shared/apis';
-import { ClientStore } from './shared/store';
+import { CarApi, ClientApi } from './shared/apis';
+import { ManageCarRantalFacade } from './shared/services/manage-car-rantal-facade.service';
 @NgModule({
   declarations: [...ManageCarRantalPages, ...ManageCarRantalContainers],
   imports: [
@@ -25,6 +23,12 @@ import { ClientStore } from './shared/store';
     ReactiveFormsModule,
     ManageCarRantalRoutingModule,
   ],
-  providers: [...ManageCarRantalFacades, ClientApi, ClientStore],
+  providers: [
+    ...ManageCarRantalFacades,
+    CarApi,
+    ClientApi,
+    ClientStore,
+    ManageCarRantalFacade,
+  ],
 })
 export class ManageCarRantalModule {}

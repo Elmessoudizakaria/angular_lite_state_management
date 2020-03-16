@@ -8,3 +8,4 @@
  */
 export * from './client.interface';
 export * from './car.interface'   ;
+export * from './manage-car-rantal.interface';

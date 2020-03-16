@@ -1,5 +1,3 @@
-import { ClientFacade } from '../../containers/client/client.facade';
-
 /*
  * Created Date: Monday March 9th 2020
  * Author: zakaria EL MESSOUDI

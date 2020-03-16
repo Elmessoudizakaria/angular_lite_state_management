@@ -9,9 +9,12 @@ HISTORY:
 <h1>Client works</h1>
 <app-client-list-page
   (remove)="removeClient($event)"
-  [clients]="this.clientFacade.clients$ | async"
+  [clients]="this.clientStore.clients$ | async"
 ></app-client-list-page>
 <app-client-form-page
   (create)="create($event)"
-  [form]="this.clientFacade.form | async"
+  [form]="this.clientStore.form$ | async"
+  [cars]="this.clientStore.cars$ | async"
 ></app-client-form-page>
+
+<app-car-list [cars]="this.clientStore.cars$ | async"></app-car-list>

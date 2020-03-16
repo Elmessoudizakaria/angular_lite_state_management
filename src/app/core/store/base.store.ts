@@ -6,7 +6,7 @@
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 
 export class Store<T> {
   state$: Observable<T>;

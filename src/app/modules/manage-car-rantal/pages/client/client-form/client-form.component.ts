@@ -6,8 +6,9 @@
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-import { Component, EventEmitter, Input, Output } from '@angular/core' ;
-import { FormGroup                              } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Car } from '../../../shared/interfaces';
 @Component({
   selector: 'app-client-form-page',
   templateUrl: './client-form.component.html',
@@ -15,6 +16,7 @@ import { FormGroup                              } from '@angular/forms';
 })
 export class ClientFormPageComponent {
   @Input() form: FormGroup;
+  @Input() cars: Car[];
   @Output() create = new EventEmitter();
 
   createClient() {

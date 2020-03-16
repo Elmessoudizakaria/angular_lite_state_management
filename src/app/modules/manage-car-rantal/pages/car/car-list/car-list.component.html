@@ -8,5 +8,9 @@ HISTORY:
 -->
 <h2>Car List</h2>
 <ul>
-  <li *ngFor="let car of cars">{{ car.name }}</li>
+  <li *ngFor="let car of dispoCars">
+    <ng-container *ngIf="car?.dispo">
+      {{ car.name }} {{ car.brand }} {{ car.price | number }} $</ng-container
+    >
+  </li>
 </ul>

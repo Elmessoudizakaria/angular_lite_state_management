@@ -10,22 +10,25 @@ import { Car } from '../../interfaces';
 export class CarState {
   cars: Car[] = [
     {
-      id: 0,
+      id   : 0     ,
       brand: 'Audi',
-      name: 'A4',
+      name : 'A4'  ,
       price: 369850,
+      dispo: true  ,
     },
     {
-      id: 1,
+      id   : 1     ,
       brand: 'Audi',
-      name: 'A3',
+      name : 'A3'  ,
       price: 764432,
+      dispo: true  ,
     },
     {
-      id: 2,
+      id   : 2     ,
       brand: 'Audi',
-      name: 'A8',
+      name : 'A8'  ,
       price: 865975,
+      dispo: true  ,
     },
   ];
 }

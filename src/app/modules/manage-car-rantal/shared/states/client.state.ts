@@ -1,12 +1,12 @@
 /*
- * Created Date: Thursday March 12th 2020
+ * Created Date: Monday March 16th 2020
  * Author: zakaria EL MESSOUDI
  * -----
- * Last Modified: Thursday March 12th 2020 9:45:16 am
+ * Last Modified: Monday March 16th 2020 9:39:10 am
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-import { Client, Car } from '../../interfaces';
+import { Client, Car } from '../interfaces';
 export class ClientState {
   clients: Client[] = [];
   currentId = 0;

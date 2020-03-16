@@ -1,7 +1,3 @@
-import { Injectable, Injector } from '@angular/core';
-// import { ClientService } from './client.facade';
-// import { Client } from '../interfaces';
-
 /*
  * Created Date: Monday March 9th 2020
  * Author: zakaria EL MESSOUDI
@@ -10,18 +6,39 @@ import { Injectable, Injector } from '@angular/core';
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
+import { Injectable, Injector                          } from '@angular/core';
+import { CarApi    , ClientApi                         } from '../apis'      ;
+import { Car       , Client   , IManageCarRantalFacade } from '../interfaces';
 @Injectable()
-export class ManageCarRantalFacade {
-//   private _clientService: ClientService;
-//   public get clientService(): ClientService {
-//     if (!this._clientService) {
-//       this._clientService = this.intector.get(ClientService);
-//     }
-//     return this._clientService;
-//   }
-//   constructor(private intector: Injector) {}
+export class ManageCarRantalFacade implements IManageCarRantalFacade {
+  private _clientService: ClientApi;
+  public get clientService() {
+    if (!this._clientService) {
+      this._clientService = this.injector.get(ClientApi);
+    }
+    return this._clientService;
+  }
 
-//   createClient(client: Client) {
-//     this.clientService.create(client);
-//   }
+  private _carService: CarApi;
+  public get carService() {
+    if (!this._carService) {
+      this._carService = this.injector.get(CarApi);
+    }
+    return this._carService;
+  }
+  constructor(private injector: Injector) {}
+
+  createCar(car: Car) {
+    return this.carService.create(car);
+  }
+  removeCar(car: Car) {
+    return this.carService.remove(car);
+  }
+
+  createClient(client: Client) {
+    return this.clientService.create(client);
+  }
+  removeClient(client: Client) {
+    return this.clientService.remove(client);
+  }
 }

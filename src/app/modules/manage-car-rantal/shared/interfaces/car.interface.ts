@@ -6,9 +6,10 @@
  * Modified By: zakaria EL MESSOUDI
  * HISTORY:
  */
-export interface Car{
-    id   :number ;
-    name : string;
-    brand: string;
-    price: number;
+export interface Car {
+  id: number;
+  name: string;
+  brand: string;
+  price: number;
+  dispo: boolean;
 }
